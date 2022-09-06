@@ -1,4 +1,4 @@
-// swift-tools-version:5.6
+// swift-tools-version:5.5
 import PackageDescription
 
 let package = Package(
@@ -11,6 +11,8 @@ let package = Package(
         .package(url: "https://github.com/vapor/vapor.git", from: "4.0.0"),
         .package(url: "https://github.com/vapor/fluent.git", from: "4.0.0"),
         .package(url: "https://github.com/vapor/fluent-sqlite-driver.git", from: "4.0.0"),
+        .package(url: "https://github.com/argentlabs/web3.swift", branch: "develop"),
+        .package(url: "https://github.com/rkreutz/web3.vapor", branch: "main"),
     ],
     targets: [
         .target(
@@ -18,7 +20,9 @@ let package = Package(
             dependencies: [
                 .product(name: "Fluent", package: "fluent"),
                 .product(name: "FluentSQLiteDriver", package: "fluent-sqlite-driver"),
-                .product(name: "Vapor", package: "vapor")
+                .product(name: "Vapor", package: "vapor"),
+                .product(name: "web3.swift", package: "web3.swift"),
+                .product(name: "web3.vapor", package: "web3.vapor"),
             ],
             swiftSettings: [
                 // Enable better optimizations when building in Release configuration. Despite the use of
