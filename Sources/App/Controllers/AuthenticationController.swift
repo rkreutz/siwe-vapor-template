@@ -33,7 +33,7 @@ extension AuthenticationController: Web3AuthenticationDelegate {
         return true
     }
 
-    func didLogin(with message: SiweMessage, in request: Request) async throws {
+    func didLogin(with message: SiweMessage, signature: String, in request: Request) async throws {
         try await request.nonces.delete(id: message.nonce)
     }
 }
