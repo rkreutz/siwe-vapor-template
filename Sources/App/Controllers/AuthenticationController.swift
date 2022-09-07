@@ -28,7 +28,7 @@ struct AuthenticationController: RouteCollection {
 
 extension AuthenticationController: Web3AuthenticationDelegate {
     func verify(message: SiweMessage, in request: Request) async throws -> Bool {
-        guard message.domain == request.application.http.server.configuration.hostname else { return false }
+        guard message.domain == "0.0.0.0" else { return false }
         guard try await request.nonces.exists(id: message.nonce) else { return false }
         return true
     }
