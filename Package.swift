@@ -4,15 +4,15 @@ import PackageDescription
 let package = Package(
     name: "siwe-vapor-template",
     platforms: [
-       .macOS(.v12)
+       .macOS(.v11)
     ],
     dependencies: [
         // 💧 A server-side Swift web framework.
-        .package(url: "https://github.com/vapor/vapor.git", from: "4.0.0"),
-        .package(url: "https://github.com/vapor/fluent.git", from: "4.0.0"),
+        .package(url: "https://github.com/rkreutz/vapor.git", from: "4.65.2"),
+        .package(url: "https://github.com/rkreutz/fluent.git", from: "4.5.1"),
         .package(url: "https://github.com/vapor/fluent-sqlite-driver.git", from: "4.0.0"),
         .package(url: "https://github.com/argentlabs/web3.swift", branch: "develop"),
-        .package(url: "https://github.com/rkreutz/web3.vapor", branch: "main"),
+        .package(url: "https://github.com/rkreutz/web3.vapor", branch: "v11-support"),
     ],
     targets: [
         .target(
